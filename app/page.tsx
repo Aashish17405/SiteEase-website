@@ -140,11 +140,6 @@ export default function HomePage() {
       title: "User Tested",
       desc: "Refined through community feedback",
     },
-    {
-      icon: <Heart className="h-5 w-5" />,
-      title: "Community Driven",
-      desc: "Built with user feedback",
-    },
   ];
 
   return (
@@ -277,11 +272,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {trustFeatures.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-md hover:shadow-lg transition-all duration-300 text-center"
+                className="border-0 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 text-center"
               >
                 <CardHeader className="pb-2 sm:pb-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
@@ -446,9 +441,12 @@ export default function HomePage() {
             Empowering individuals with visual impairments to experience the web
             without barriers.
           </p>
-          <p className="text-xs sm:text-sm text-gray-500">
-            © 2024 SiteEase. Designed with accessibility, built with compassion.
-          </p>
+          <a
+            href="/privacy-policy"
+            className="text-xs sm:text-sm text-gray-400 hover:text-emerald-400 transition-colors duration-200 underline"
+          >
+            Privacy Policy
+          </a>
         </div>
       </footer>
     </div>

@@ -365,10 +365,11 @@ export default function HomePage() {
           <div className="relative w-full overflow-hidden rounded-xl shadow-xl border border-gray-200 bg-gray-100 aspect-video">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/iM3bCWWrC98?si=fJjPYC-HjfsUnej9"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/kKGAXrJCxP4?si=y8jYqzyJYHu5x_am"
               title="YouTube video player"
               frameBorder="0"
-              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen

@@ -1,11 +1,29 @@
 import React from "react";
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Site Ease Chrome Extension privacy policy - Learn how we protect your data and maintain your privacy while using our accessibility features.",
+  openGraph: {
+    title: "Privacy Policy | SiteEase",
+    description: "Site Ease Chrome Extension privacy policy - Learn how we protect your data and maintain your privacy.",
+    url: "https://siteease.dev-aashish.tech/privacy-policy",
+    images: [
+      {
+        url: "https://siteease.dev-aashish.tech/opengraph-image.png",
+        alt: "SiteEase Privacy Policy",
+      },
+    ],
+  }
+}
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-white min-h-screen">
-      <div className="container mx-auto px-6 py-8">
-        <div className="privacy-content max-w-4xl mx-auto">
+    <main className="bg-white min-h-screen">
+      <Navbar />
+      <article className="container mx-auto px-6 py-8">
+        <header className="privacy-content max-w-4xl mx-auto">
           <div className="header-section mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
               Privacy Policy
@@ -30,7 +48,7 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
-          <div className="content-section mb-8">
+          <section className="content-section mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               1. Information We Collect
             </h2>
@@ -59,9 +77,9 @@ const PrivacyPolicy = () => {
               <li>IP addresses or location data</li>
               <li>Any data that could be used to identify you</li>
             </ul>
-          </div>
+          </section>
 
-          <div className="content-section mb-8">
+          <section className="content-section mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               2. How We Use Your Information
             </h2>
@@ -88,9 +106,9 @@ const PrivacyPolicy = () => {
                 operation of the extension's features
               </li>
             </ul>
-          </div>
+          </section>
 
-          <div className="content-section mb-8">
+          <section className="content-section mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               3. Information Sharing and Disclosure
             </h2>
@@ -107,9 +125,9 @@ const PrivacyPolicy = () => {
               <li>Is not accessible to other extensions or websites</li>
               <li>Is automatically cleared when you uninstall the extension</li>
             </ul>
-          </div>
+          </section>
 
-          <div className="content-section mb-8">
+          <section className="content-section mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               4. Data Security
             </h2>
@@ -139,9 +157,9 @@ const PrivacyPolicy = () => {
                 maintenance and updates through the Chrome Web Store
               </li>
             </ul>
-          </div>
+          </section>
 
-          <div className="content-section mb-8">
+          <section className="content-section mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               5. Contact Information
             </h2>
@@ -158,10 +176,10 @@ const PrivacyPolicy = () => {
                 aashish17405@gmail.com
               </a>
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </section>
+        </header>
+      </article>
+    </main>
   );
 };
 

@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,179 +9,99 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Eye,
-  Type,
-  Palette,
-  ToggleLeft,
-  Zap,
-  Shield,
   Download,
   Chrome,
-  Star,
+  Eye,
   Users,
-  Heart,
-  Award,
-  CheckCircle,
-  Globe,
+  ShieldCheck,
+  Star,
+  Palette,
+  BookOpen,
+  Accessibility,
+  Type,
 } from "lucide-react";
+import { OptimizedImage } from "@/components/OptimizedImage";
+import { LazyYouTube } from "@/components/optimizedYTVideo";
+
+const trustIndicators = [
+  {
+    icon: <Eye className="h-5 w-5" />,
+    value: "10K+",
+    label: "Users Helped",
+  },
+  {
+    icon: <ShieldCheck className="h-5 w-5" />,
+    value: "100%",
+    label: "Privacy First",
+  },
+  {
+    icon: <Star className="h-5 w-5" />,
+    value: "4.9/5",
+    label: "User Rating",
+  },
+  {
+    icon: <Users className="h-5 w-5" />,
+    value: "Community",
+    label: "Open Source",
+  },
+];
+
+const trustFeatures = [
+  {
+    icon: <Palette className="h-6 w-6" />,
+    title: "Color Blind Modes",
+    desc: "Multiple color vision deficiency modes for real-world accessibility.",
+  },
+  {
+    icon: <BookOpen className="h-6 w-6" />,
+    title: "Dyslexia Support",
+    desc: "Font and spacing adjustments for easier reading.",
+  },
+  {
+    icon: <Accessibility className="h-6 w-6" />,
+    title: "Screen Reader Friendly",
+    desc: "Improved ARIA and semantic markup for assistive tech.",
+  },
+];
+
+const features = [
+  {
+    icon: <Palette className="h-6 w-6" />,
+    title: "Color Blind Modes",
+    description:
+      "Switch between Protanopia, Deuteranopia, Tritanopia, and more.",
+    items: [
+      "Simulate and correct color vision deficiencies",
+      "Customizable color filters",
+      "Toggle on any website",
+    ],
+  },
+  {
+    icon: <Type className="h-6 w-6" />,
+    title: "Font Adjustments",
+    description: "Change font size, family, and spacing for readability.",
+    items: [
+      "Dyslexia-friendly fonts",
+      "Adjust line, word, and letter spacing",
+      "Override site fonts",
+    ],
+  },
+  {
+    icon: <BookOpen className="h-6 w-6" />,
+    title: "Reading Modes",
+    description: "Distraction-free and high-contrast reading experiences.",
+    items: [
+      "Dark mode and high-contrast options",
+      "Focus mode for articles",
+      "Hide images or animations",
+    ],
+  },
+];
 
 export default function HomePage() {
-  const features = [
-    {
-      icon: <Palette className="h-6 w-6" />,
-      title: "Color Vision Support",
-      description:
-        "Comprehensive assistance for all types of color vision deficiencies, ensuring no one is left behind.",
-      items: [
-        "Protanopia (Red-blind) Support",
-        "Deuteranopia (Green-blind) Support",
-        "Tritanopia (Blue-blind) Support",
-        "Tritanomaly (Yellow-blind) Support",
-        "Achromatopsia (Complete color blindness)",
-      ],
-    },
-    {
-      icon: <Type className="h-6 w-6" />,
-      title: "Dyslexia Assistance",
-      description:
-        "Scientifically-backed features to improve reading comprehension and reduce visual stress for dyslexic users.",
-      items: [
-        "OpenDyslexic Font Integration",
-        "Optimized Letter Spacing",
-        "Enhanced Word Spacing",
-        "Reading Flow Improvement",
-      ],
-    },
-    {
-      icon: <Eye className="h-6 w-6" />,
-      title: "Visual Enhancement",
-      description:
-        "Advanced contrast and clarity adjustments to reduce eye strain and improve text readability.",
-      items: [
-        "High Contrast Mode",
-        "Text Clarity Enhancement",
-        "Background Optimization",
-        "Glare Reduction",
-      ],
-    },
-    {
-      icon: <ToggleLeft className="h-6 w-6" />,
-      title: "Intuitive Controls",
-      description:
-        "Designed with accessibility in mind - easy-to-use controls that work for everyone.",
-      items: [
-        "One-Click Activation",
-        "Visual Status Indicators",
-        "Persistent Preferences",
-        "Accessible Interface",
-      ],
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Instant Relief",
-      description:
-        "Immediate improvements without page reloads - see the difference the moment you need it.",
-      items: [
-        "Real-Time Processing",
-        "Instant Visual Changes",
-        "Smart Element Detection",
-        "Seamless Experience",
-      ],
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Complete Coverage",
-      description:
-        "Works across all website elements to ensure consistent accessibility throughout your browsing experience.",
-      items: [
-        "Text & Headings",
-        "Images & Graphics",
-        "Navigation Elements",
-        "Interactive Components",
-      ],
-    },
-  ];
-
-  const trustIndicators = [
-    {
-      icon: <Users className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Growing Community",
-      value: "Users",
-    },
-    {
-      icon: <Star className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Positive Reviews",
-      value: "★★★★★",
-    },
-    {
-      icon: <Download className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Easy Installation",
-      value: "1-Click",
-    },
-    {
-      icon: <Globe className="h-4 w-4 sm:h-5 sm:w-5" />,
-      label: "Universal Support",
-      value: "All Sites",
-    },
-  ];
-
-  const trustFeatures = [
-    {
-      icon: <Shield className="h-5 w-5" />,
-      title: "Privacy Protected",
-      desc: "Zero data collection",
-    },
-    {
-      icon: <Award className="h-5 w-5" />,
-      title: "Research-Based",
-      desc: "Built on accessibility research",
-    },
-    {
-      icon: <CheckCircle className="h-5 w-5" />,
-      title: "User Tested",
-      desc: "Refined through community feedback",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-      <header className="border-b bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-2 flex items-center justify-between">
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <img
-              alt=""
-              src="/icon-128x128.png"
-              className="h-4 w-4 sm:h-6 sm:w-6 md:w-10 md:h-10 text-white"
-            />
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-lg font-bold text-gray-900">
-                SiteEase
-              </span>
-              <span className="text-xs text-emerald-600 font-medium hidden sm:block">
-                Accessibility First
-              </span>
-            </div>
-          </div>
-          <Button
-            asChild
-            size="sm"
-            className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-xs sm:text-sm px-3 sm:px-4"
-          >
-            <a
-              href="https://chromewebstore.google.com/detail/site-ease/hhfjlgpooppjdgbnlemkpkjkddfbfpfj"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-1 sm:space-x-0"
-            >
-              <Chrome className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="hidden sm:inline">Add to Chrome</span>
-              <span className="sm:hidden">Install</span>
-            </a>
-          </Button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
+      <Navbar />
       <section className="py-12 sm:py-16 lg:py-24 lg:pt-10 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center max-w-5xl">
           <div className="flex flex-wrap justify-center gap-2 mb-4 sm:mb-6">
@@ -330,7 +251,7 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="space-y-2 sm:space-y-3">
-                    {feature.items.map((item, itemIndex) => (
+                    {feature.items.map((item: string, itemIndex: number) => (
                       <li
                         key={itemIndex}
                         className="flex items-start space-x-2 sm:space-x-3 text-xs sm:text-sm text-gray-600"
@@ -362,19 +283,7 @@ export default function HomePage() {
           </div>
 
           {/* Video Section */}
-          <div className="relative w-full overflow-hidden rounded-xl shadow-xl border border-gray-200 bg-gray-100 aspect-video">
-            <iframe
-              className="w-full h-full"
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/kKGAXrJCxP4?si=y8jYqzyJYHu5x_am"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <LazyYouTube videoId="kKGAXrJCxP4" title="YouTube video player" />
 
           {/* Description Section */}
           <div className="mt-6 text-center">
@@ -425,10 +334,13 @@ export default function HomePage() {
         <div className="container mx-auto text-center max-w-4xl">
           <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center">
-              <img
-                alt=""
+              <OptimizedImage
+                alt="SiteEase Logo"
                 src="/icon-128x128.png"
+                width={40}
+                height={40}
                 className="h-4 w-4 sm:h-6 sm:w-6 md:w-10 md:h-10 text-white"
+                priority={true}
               />
             </div>
             <div className="flex flex-col items-start">

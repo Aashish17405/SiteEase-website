@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    "site ease",
+    "siteease",
+    "site ease chrome extension",
     "color filter chrome extension",
     "chrome extension for dyslexia",
     "chrome extension for color blindness",

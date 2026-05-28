@@ -19,8 +19,10 @@ import {
   BookOpen,
   Accessibility,
   Type,
+  ZoomIn,
+  Image as ImageIcon,
+  Volume2,
 } from "lucide-react";
-import { LazyYouTube } from "@/components/optimizedYTVideo";
 import Footer from "@/components/Footer";
 
 const trustIndicators = [
@@ -79,21 +81,42 @@ const features = [
   {
     icon: <Type className="h-6 w-6" />,
     title: "Font Adjustments",
-    description: "Change font size, family, and spacing for readability.",
+    description: "Increase or decrease font size, family, and spacing for readability.",
     items: [
       "Dyslexia-friendly fonts",
+      "One-click font size increase/decrease",
       "Adjust line, word, and letter spacing",
       "Override site fonts",
     ],
   },
   {
-    icon: <BookOpen className="h-6 w-6" />,
-    title: "Reading Modes",
-    description: "Distraction-free and high-contrast reading experiences.",
+    icon: <ZoomIn className="h-6 w-6" />,
+    title: "Page Magnifier",
+    description: "Zoom the entire page in or out for comfortable viewing.",
     items: [
-      "Dark mode and high-contrast options",
-      "Focus mode for articles",
-      "Hide images or animations",
+      "Increase page magnification",
+      "Decrease page magnification",
+      "Works across websites instantly",
+    ],
+  },
+  {
+    icon: <ImageIcon className="h-6 w-6" />,
+    title: "Image Visibility Controls",
+    description: "Hide or show images on demand to reduce distractions.",
+    items: [
+      "Hide images for cleaner reading",
+      "Show images again with one click",
+      "Useful for low-bandwidth and focus mode",
+    ],
+  },
+  {
+    icon: <Volume2 className="h-6 w-6" />,
+    title: "Read Aloud + Dictionary",
+    description: "Highlight text to hear it with text-to-speech and get word meanings.",
+    items: [
+      "Read selected text out loud",
+      "Highlight any word for dictionary meaning",
+      "Helps with pronunciation and comprehension",
     ],
   },
 ];
@@ -297,7 +320,17 @@ export default function HomePage() {
           </div>
 
           {/* Video Section */}
-          <LazyYouTube videoId="kKGAXrJCxP4" title="YouTube video player" />
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-black aspect-video">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/4u2X4VN2OYw?si=JNSFDkI8NhD_epNf"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
 
           {/* Description Section */}
           <div className="mt-6 text-center">

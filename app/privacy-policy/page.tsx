@@ -33,7 +33,7 @@ const PrivacyPolicy = () => {
 
           <div className="last-updated mb-6">
             <p className="text-base text-gray-600">
-              <strong>Last Updated:</strong> June 2025
+              <strong>Last Updated:</strong> May 2026
             </p>
           </div>
 
@@ -61,11 +61,13 @@ const PrivacyPolicy = () => {
               <li>
                 <strong>Accessibility Preferences:</strong> Your chosen settings
                 for color blindness filters (Protanopia, Deuteranopia,
-                Tritanopia, Tritanomaly, Achromatopsia) and dyslexia support
+                Tritanopia, Tritanomaly, Achromatopsia), font adjustments, and
+                page magnifier controls
               </li>
               <li>
                 <strong>Feature States:</strong> Which accessibility features
-                are currently enabled or disabled
+                are currently enabled or disabled (such as image show/hide and
+                text-to-speech controls)
               </li>
             </ul>
             <p className="text-lg text-gray-700 leading-relaxed mt-4">
@@ -94,12 +96,18 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <strong>Real-time Adjustments:</strong> Apply color filters and
-                dyslexia-friendly fonts to web pages you visit
+                dyslexia-friendly fonts, font size updates, and page
+                magnification to web pages you visit
               </li>
               <li>
                 <strong>Feature Management:</strong> Ensure only one color
                 filter is active at a time while allowing dyslexia support to
                 work alongside any filter
+              </li>
+              <li>
+                <strong>Selection-Based Tools:</strong> Read highlighted text
+                aloud and fetch word meanings only when you explicitly trigger
+                those actions
               </li>
               <li>
                 <strong>Performance Optimization:</strong> Maintain smooth
@@ -120,11 +128,22 @@ const PrivacyPolicy = () => {
               secure storage API (chrome.storage.sync). This data:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mt-4">
-              <li>Never leaves your device</li>
-              <li>Is not transmitted to any external servers</li>
+              <li>
+                Is used only for extension functionality and settings persistence
+              </li>
+              <li>
+                May sync across your Chrome browsers through your Google account
+                if Chrome Sync is enabled
+              </li>
               <li>Is not accessible to other extensions or websites</li>
               <li>Is automatically cleared when you uninstall the extension</li>
             </ul>
+            <p className="text-lg text-gray-700 leading-relaxed mt-4">
+              For dictionary lookups, the selected word may be sent to the
+              configured dictionary API only when you request a meaning. We do
+              not send your full page content, and we do not store that lookup
+              history on our own servers.
+            </p>
           </section>
 
           <section className="content-section mb-8">
@@ -141,8 +160,9 @@ const PrivacyPolicy = () => {
                 your browser using Chrome's secure storage API
               </li>
               <li>
-                <strong>No External Communication:</strong> The extension does
-                not make any network requests or transmit data
+                <strong>Limited External Requests:</strong> The extension only
+                makes network requests when required for dictionary API lookups
+                initiated by you
               </li>
               <li>
                 <strong>Minimal Permissions:</strong> We only request the
@@ -168,7 +188,7 @@ const PrivacyPolicy = () => {
               our data practices, please contact us at:
             </p>
             <p className="text-lg text-gray-700">
-              Email:
+              Email: 
               <a
                 href="mailto:aashish17405@gmail.com"
                 className="text-blue-600 hover:text-blue-800 underline"
